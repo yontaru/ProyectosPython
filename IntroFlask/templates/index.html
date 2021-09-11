@@ -1,14 +1,21 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <title>Inicio</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Bienvenido al inicio</h1>
-    </div>
-  </body>
-</html>
+{% extends 'maestra.html' %}
+{% block totulo %}Mi primera página con Flask{% endblock totulo %}
+
+{% block contenido %}
+      <h2>{{data.subtitulo}}{{data.usuario}}</h2>
+      <br>
+{% if data.cantvehiculos > 0 %}
+<ul>
+        {% for vehiculo in data.vehiculos %}
+        <li>{{vehiculo}}</li>
+        {% endfor %}
+</ul>
+{% else %}
+<h3>No existen vehiculos para mostrar</h3>
+{% endif %}
+      <select>
+        {% for vehiculo in data.vehiculos %}
+        <option value="{{data.vehiculo}}">{{vehiculo}}</option>
+        {% endfor %}
+      </select>
+{% endblock contenido %}

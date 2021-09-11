@@ -12,9 +12,14 @@ def index():
         'subtitulo':'Bienvenido al sistema usuario: ',
         'vehiculos':vehiculos,
         'usuario':'usuarioprueba',
-        'referencia':['2','Aveo','Logan','S power']
+        'referencia':['2','Aveo','Logan','S power'],
+        'cantvehiculos':len(vehiculos)
     }
     return render_template('index.html',data=datosindex)
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
 if __name__ == "__main__":
     app.run(debug=True,port=3200)
