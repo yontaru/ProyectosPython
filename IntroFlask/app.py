@@ -12,7 +12,7 @@ def index():
         'subtitulo':'Bienvenido al sistema usuario: ',
         'vehiculos':vehiculos,
         'usuario':'usuarioprueba',
-        'referencia':['2','Aveo','Logan','S power'],
+        'referencias':['2','Aveo','Logan','S power'],
         'cantvehiculos':len(vehiculos)
     }
     return render_template('index.html',data=datosindex)

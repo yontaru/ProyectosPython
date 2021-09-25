@@ -1,5 +1,5 @@
 {% extends 'maestra.html' %}
-{% block totulo %}Mi primera página con Flask{% endblock totulo %}
+{% block titulo %}Mi primera página con Flask{% endblock titulo %}
 
 {% block contenido %}
       <h2>{{data.subtitulo}}{{data.usuario}}</h2>
@@ -15,7 +15,17 @@
 {% endif %}
       <select>
         {% for vehiculo in data.vehiculos %}
-        <option value="{{data.vehiculo}}">{{vehiculo}}</option>
+        <option value="{{vehiculo}}">{{vehiculo}}</option>
         {% endfor %}
       </select>
-{% endblock contenido %}
+<table class="table table-hover table-bordered">
+      {% set count = namespace(a=0) %}
+      {% for vehiculo in data.vehiculos %}
+            <tr><td>{{vehiculo}}</td>
+            <td>{{data.referencias[loop.index-1]}}</td></tr>
+      {% set count.a = count.a + 1 %}
+      {% endfor %}
+</table>
+
+
+{% endblock%}
