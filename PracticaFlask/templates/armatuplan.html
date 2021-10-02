@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block contenido %}
+<h2>{% block titulo %}{% endblock titulo %}</h2>
+
+<label for="destinos">Destinos:</label>
+
+<select id="destinos">
+{% set count = namespace(a=0) %}
+      {% for destinos in data.destinos %}
+            <option value={{data.destinos[loop.index-1]}}>{{destinos}}</option>
+      {% set count.a = count.a + 1 %}
+      {% endfor %}
+</select>
+
+{% endblock%}
