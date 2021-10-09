@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block titulo %}
+Agregar Cliente
+{% endblock %}
+{% block contenido %}
+<div class="container">
+    <section class="section">
+        <div class="columns">
+            <div class="column is-one-third">
+                <h3 class="is-size-3">Agregar Cliente</h3>
+                <form action="{{url_for('update_user')}}" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input required type="text" class="form-control" placeholder="Nombre" name="name" id="name">
+                    <label for="nombre">Email:</label>
+                    <input required type="text" class="form-control" placeholder="Email" name="email" id="email">
+                    <label for="telefono">Telefono:</label>
+                    <input required type="text" class="form-control" placeholder="Teléfono" name="telefono" id="telefono">
+                    <label for="nombre">Password:</label>
+                    <input required type="text" class="form-control" placeholder="Password" name="passwd" id="passwd">
+                    <br>
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                    <a href="{{url_for('users')}}" class="btn btn-primary">Volver</a>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
