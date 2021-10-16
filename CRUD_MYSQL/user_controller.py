@@ -4,7 +4,7 @@ from bd import get_connection # Importar la conexión a la BD
 def insert_user(name, email, telefono, passwd):
     connection = get_connection()
     with connection.cursor() as cursor:
-        cursor.execute("INSERT INTO user(name, email, telefono, passwd) VALUES(%s, %s, %s, %s)", (name, email, telefono, passwd))
+        cursor.execute ("INSERT INTO user (name, email, telefono, passwd) VALUES(%s, %s, %s, %s)", (name, email, telefono, passwd))
     connection.commit()
     connection.close()
 

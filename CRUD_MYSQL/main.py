@@ -39,6 +39,15 @@ def delete_user():
     user = user_controller.delete_user(request.form["id"])
     return redirect("/users")
 
+@app.route("/insert_user", methods=["POST"])
+def insert_user():
+    name = request.form["name"]
+    email = request.form["email"]
+    telefono = request.form["telefono"]
+    passwd = request.form["passwd"]
+    user_controller.insert_user(name, email, telefono, passwd)
+    return redirect("/users")
+
 # Iniciar el servidor
 if __name__ == "__main__":
     #app.run(host='0.0.0.0', port=8000, debug=True)
