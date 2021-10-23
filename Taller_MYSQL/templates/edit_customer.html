@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block titulo %}
+Editar Cliente
+{% endblock %}
+{% block contenido %}
+<div class="container">
+    <section class="section">
+        <div class="columns">
+            <div class="column">
+                <h3 class="is-size-3">Editar Cliente</h3>
+                <form action="{{url_for('update_customer')}}" method="post">
+                    {# Enviar el id en un campo oculto #}
+                    <input type="hidden" name="id" value="{{customer[0]}}">
+                    <label for="name">Nombre:</label>
+                    <input value="{{customer[1]}}" required type="text" class="form-control" placeholder="Nombre" name="name"
+                        id="nombre">
+                    <label for="email">Estatus:</label>
+                    <input value="{{customer[2]}}" required type="numvre" class="form-control" placeholder="status"
+                        name="status" id="status">    
+                    <label for="telefono">Móvil:</label>
+                    <input value="{{customer[3]}}" required type="text" class="form-control" placeholder="mobile"
+                        name="mobile" id="mobile">                 
+                    <br>
+                    <button type="submit" class="btn btn-success">Actualizar</button>
+                    <a href="{{url_for('customers')}}" class="btn btn-primary">Volver</a>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
