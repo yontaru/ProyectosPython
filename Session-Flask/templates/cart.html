@@ -1,0 +1,11 @@
+{% extends 'layout.html'%}
+{% block title %}Carrito de compra{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1>Estamos en el carrito de compras</h1>
+        <br>
+        <p>Correo del usuario: {{session['email']}}</p>
+        <br>
+        <a href="/logout" class="btn btn-success">Cerrar Sesión</a>
+    </div>
+{% endblock %}
